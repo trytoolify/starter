@@ -48,7 +48,11 @@ export async function saveLayout({ fileName, items }: SaveLayoutType) {
 }
 
 export async function getLayout({ fileName }: { fileName: string }) {
-  const dataFilePath = path.join(process.cwd(), ".creo", "layout.json");
+  const dataFilePath = path.join(
+    process.env.USER_STARTER_PATH || process.cwd(),
+    ".creo",
+    "layout.json"
+  );
 
   try {
     //create a file if it doesn't exist

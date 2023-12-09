@@ -27,7 +27,11 @@ type SaveLayoutType = {
   items: LayoutItem[];
 };
 export async function saveLayout({ fileName, items }: SaveLayoutType) {
-  const dataFilePath = path.join(process.cwd(), ".creo", "layout.json");
+  const dataFilePath = path.join(
+    process.env.USER_STARTER_PATH || process.cwd(),
+    ".creo",
+    "layout.json"
+  );
 
   try {
     //create a file if it doesn't exist
@@ -103,8 +107,11 @@ export async function getFile({
   fileName: string;
 }) {
   console.log("Getting file", sessionId);
-  const cwd = process.cwd();
-  const tasksPath = path.join(cwd, "tasks", fileName);
+  const tasksPath = path.join(
+    process.env.USER_STARTER_PATH || process.cwd(),
+    "tasks",
+    fileName
+  );
   let file = "";
   if (existsSync(tasksPath)) {
     file = (await fs.readFile(tasksPath)).toString();
@@ -145,7 +152,10 @@ export async function saveFile({
   fileName: string;
   file: string;
 }) {
-  const cwd = process.cwd();
-  const tasksPath = path.join(cwd, "tasks", fileName);
+  const tasksPath = path.join(
+    process.env.USER_STARTER_PATH || process.cwd(),
+    "tasks",
+    fileName
+  );
   await fs.writeFile(tasksPath, file);
 }

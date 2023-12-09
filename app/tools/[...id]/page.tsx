@@ -25,12 +25,9 @@ export default async function Task({
 }) {
   const fileName = params.id?.[0] ?? "";
 
-  const cwd = process.cwd();
-  const tasksPath = path.join(cwd, "tasks", fileName);
-
   if (process.env.NODE_ENV === "development") {
     // hacks for now
-    const CustomModule = dynamic(() => import(`/tasks/${fileName}`));
+    const CustomModule = dynamic(() => import(`/tools/${fileName}`));
     return (
       <Suspense
         fallback={

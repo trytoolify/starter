@@ -12,7 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@trycreo/ui": "^3.12.0",
+    "@trycreo/ui": "^3.13.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",

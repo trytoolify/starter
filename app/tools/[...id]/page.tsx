@@ -64,7 +64,7 @@ export default async function Task({
         </div>
       );
     } else {
-      const CustomModule = dynamic(() => import(`/tasks/${fileName}`));
+      const CustomModule = dynamic(() => import(`/tools/${fileName}`));
 
       return (
         <Suspense

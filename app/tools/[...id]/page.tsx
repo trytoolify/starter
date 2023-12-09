@@ -4,7 +4,7 @@ import path from "path";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
-import { LayoutProvider } from "@trycreo/ui/components";
+import { LayoutProvider, store } from "@trycreo/ui/components";
 import Header from "../../../components/header";
 import {
   createAiSession,
@@ -44,6 +44,7 @@ export default async function Task({
             saveLayout={saveLayout}
             createAiSession={createAiSession}
             fileName={fileName}
+            store={store}
           >
             {/* <div className="absolute bg-[radial-gradient(35.28%_35.28%_at_50%_50%,#090909_0%,rgba(0,0,0,0.00)_100%)] rounded-full top-0 mx-auto h-[60vh] left-0 right-0 -mt-[30vh]" /> */}
             <CustomModule />

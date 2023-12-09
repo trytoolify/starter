@@ -9,7 +9,7 @@ import Header from "../components/header";
 
 export default function Home() {
   const cwd = process.cwd();
-  const tasksPath = path.join(cwd, "tasks");
+  const tasksPath = path.join(cwd, "tools");
   const files = fs.readdirSync(tasksPath);
 
   return (

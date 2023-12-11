@@ -1,10 +1,10 @@
 import Button from "@/components/button";
-import { Block } from "@trycreo/ui/components";
+import { Block } from "@trycreo/core/client";
 
-async function List() {
+function List() {
   return (
     <>
-      <Block id='list' w={1} h={3}>
+      <Block id='list'>
         <div className='border bg-background w-full rounded-xl overflow-hidden'>
           <div className='flex flex-col p-4 px-2 w-full styled-scrollbar overflow-y-auto relative'>
             <div className='px-2 mb-2 text-neutral-400 text-xs'>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "@trycreo/ui/dist/index.css";
+import "@trycreo/core/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,7 +52,9 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={
-          stabilGrotesk.className + " " + "dark bg-black styled-scrollbar"
+          stabilGrotesk.className +
+          " " +
+          "dark bg-black text-foreground styled-scrollbar"
         }
       >
         {children}

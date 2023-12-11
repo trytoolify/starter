@@ -5,7 +5,7 @@ import ToolPage from "@trycreo/core/pages/tools/index";
 export default async function Page(props: any) {
   return (
     <>
-      <ToolPage {...props} {...actions} />
+      <ToolPage {...props} actions={actions} />
     </>
   );
 }

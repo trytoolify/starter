@@ -1,32 +1,44 @@
-import Button from "@/components/button";
+import { Button } from "@trycreo/ui/components";
 import { Block } from "@trycreo/core/client";
 
-function List() {
-  return (
-    <>
-      <Block id='list'>
-        <div className='border bg-background w-full rounded-xl overflow-hidden'>
-          <div className='flex flex-col p-4 px-2 w-full styled-scrollbar overflow-y-auto relative'>
-            <div className='px-2 mb-2 text-neutral-400 text-xs'>
-              {" "}
-              Grocery List{" "}
-            </div>
+async function List() {
+  const testFetch = await fetch(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  ).then((res) => res.json());
+  console.log("testFetch", testFetch);
 
-            <Button> Eggs </Button>
-            <Button> Milk </Button>
-            <Button> Bread </Button>
-            <Button> Cheese </Button>
-            <Button> Butter </Button>
-            <Button> Apples </Button>
-            <Button> Oranges </Button>
-            <Button> Bananas </Button>
-            <Button> Grapes </Button>
-            <Button> Strawberries </Button>
-            <Button> Blueberries </Button>
-          </div>{" "}
-        </div>
-      </Block>
-    </>
+  const groceryList = [
+    "Eggs",
+    "Milk",
+    "Bread",
+    "Cheese",
+    "Butter",
+    "Apples",
+    "Oranges",
+    "Bananas",
+    "Grapes",
+    "Strawberries",
+    "Blueberries",
+  ];
+
+  return (
+    <Block id='list' w={1} h={3}>
+      <div className='flex flex-col p-4 px-2 relative'>
+        <div className='px-2 mb-2 text-neutral-400 text-xs'> Grocery List </div>
+
+        {groceryList.map((item, index) => {
+          return (
+            <Button
+              key={index}
+              className='justify-start w-full'
+              variant={"ghost"}
+            >
+              {item}
+            </Button>
+          );
+        })}
+      </div>
+    </Block>
   );
 }
 

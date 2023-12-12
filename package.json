@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update": "npm i @trycreo/core@latest @trycreo/ui@latest"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@trycreo/core": "^0.1.1",
-    "@trycreo/ui": "^5.2.0",
+    "@trycreo/core": "^0.1.2",
+    "@trycreo/ui": "^5.4.0",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

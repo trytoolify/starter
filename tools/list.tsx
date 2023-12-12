@@ -1,5 +1,5 @@
 import { Button } from "@trycreo/ui/components";
-import { Block } from "@trycreo/core/client";
+import { Block } from "@trycreo/core/client/block";
 
 async function List() {
   const testFetch = await fetch(

@@ -1,16 +1,12 @@
 import "./globals.css";
+import "@trycreo/core/index.css";
+import "@trycreo/ui/dist/index.css";
+import localFont from "next/font/local";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import localFont from "next/font/local";
-import "@trycreo/ui/dist/index.css";
-import "@trycreo/core/index.css";
+import { default as CreoRootLayout } from "@trycreo/core/pages/layout";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Creo | Local development",
-  description: "Build great tooling, fast",
-};
 
 const stabilGrotesk = localFont({
   src: [
@@ -43,6 +39,11 @@ const stabilGrotesk = localFont({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: "Creo | Local development",
+  description: "Build great tooling, fast",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -57,7 +58,7 @@ export default function RootLayout({
           "dark bg-black text-foreground styled-scrollbar"
         }
       >
-        {children}
+        <CreoRootLayout>{children}</CreoRootLayout>
       </body>
     </html>
   );

@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@trycreo/core": "^0.1.4",
+    "@trycreo/core": "^0.1.5",
     "@trycreo/ui": "^5.5.0",
     "next": "^14.0.4",
     "react": "^18.2.0",

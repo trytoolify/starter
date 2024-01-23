@@ -6,19 +6,18 @@ async function List() {
     "https://jsonplaceholder.typicode.com/todos/1"
   ).then((res) => res.json());
 
-  const groceryList = [
-    "Eggs",
-    "Milk",
-    "Bread",
-    "Cheese",
-    "Butter",
-    "Apples",
-    "Oranges",
-    "Bananas",
-    "Grapes",
-    "Strawberries",
-    "Blueberries",
-  ];
+    const groceryList = [
+      "Milk",
+      "Bread",
+      "Cheese",
+      "Butter",
+      "Apples",
+      "Oranges",
+      "Bananas",
+      "Grapes",
+      "Strawberries",
+      "Blueberries",
+    ];
 
   return (
     <Block id='list' w={1} h={3}>

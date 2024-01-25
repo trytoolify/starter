@@ -3,9 +3,9 @@
   "version": "1.10.0",
   "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "next lint",
     "update": "npm i @trycreo/core@latest @trycreo/ui@latest"
   },

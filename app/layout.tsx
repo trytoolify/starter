@@ -3,10 +3,7 @@ import "@trycreo/core/index.css";
 import "@trycreo/ui/dist/index.css";
 import localFont from "next/font/local";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { default as CreoRootLayout } from "@trycreo/core/pages/layout";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const stabilGrotesk = localFont({
   src: [
@@ -50,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body
         className={
           stabilGrotesk.className +

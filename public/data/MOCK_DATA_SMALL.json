@@ -6,7 +6,7 @@
     "email": "wcossom0@huffingtonpost.com",
     "gender": "Female",
     "ip_address": "84.144.101.25",
-    "new_ui": true
+    "new_ui": false
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "email": "khandsheart1@moonfruit.com",
     "gender": "Male",
     "ip_address": "204.230.146.51",
-    "new_ui": false
+    "new_ui": true
   },
   {
     "id": 3,

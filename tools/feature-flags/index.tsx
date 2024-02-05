@@ -11,7 +11,7 @@ async function FeatureFlags() {
 
   return (
     <>
-      <div key="table" data-grid={{ x: 0, y: 0, w: 6, h: 4 }}>
+      <div>
         <h1>Users Table</h1>
 
         <DataTable

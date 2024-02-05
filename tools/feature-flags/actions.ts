@@ -19,7 +19,7 @@ export async function toggleNewUI(data: any) {
       }
     });
 
-    await fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2));
+    fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2));
 
     console.log("UI toggle updated successfully.");
 

@@ -1,0 +1,35 @@
+[
+  {
+    "employee_id": "E001",
+    "name": "Vinay Sateesh",
+    "date_of_joining": "2022-01-15",
+    "position": "Software Engineer",
+    "department": "Engineering",
+    "email": "vinay.sateesh@example.com",
+    "phone": "123-456-7890",
+    "address": "1234, Elm Street, SomeCity, Country",
+    "salary": 70000
+  },
+  {
+    "employee_id": "E002",
+    "name": "Saifur Rahman",
+    "date_of_joining": "2021-08-20",
+    "position": "Project Manager",
+    "department": "Project Management",
+    "email": "saifur.rahman@example.com",
+    "phone": "234-567-8901",
+    "address": "2345, Maple Avenue, AnotherCity, Country",
+    "salary": 80000
+  },
+  {
+    "employee_id": "E003",
+    "name": "Rohan Mayya",
+    "date_of_joining": "2023-04-10",
+    "position": "UX Designer",
+    "department": "Design",
+    "email": "rohan.mayya@example.com",
+    "phone": "345-678-9012",
+    "address": "3456, Oak Lane, DifferentCity, Country",
+    "salary": 65000
+  }
+]

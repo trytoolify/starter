@@ -1,39 +1,29 @@
 {
-  "name": "@trycreo/starter",
-  "version": "0.0.0",
-  "private": false,
+  "name": "starter",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "update": "npm i @trycreo/core@latest @trycreo/ui@latest"
-  },
-  "publishConfig": {
-    "access": "public"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@trycreo/core": "0.4.11",
-    "@trycreo/ui": "5.8.1",
-    "next": "^14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.48.2",
-    "tailwindcss-animate": "^1.0.7"
+    "@trycreo/ui": "6.0.24",
+    "lucide-react": "^0.335.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.2.17",
-    "autoprefixer": "^10.4.16",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "^14.0.4",
-    "postcss": "^8.4.32",
-    "postcss-import": "^15.1.0",
-    "tailwindcss": "^3.3.2",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  },
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
-  "author": "clearly-outsane",
-  "license": "ISC"
+  }
 }

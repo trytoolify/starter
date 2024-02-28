@@ -1,3 +1,4 @@
+import { Button } from "@trycreo/ui/dist/components/ui/button";
 import { dummyAction } from "./actions";
 
 import {
@@ -9,13 +10,12 @@ import {
   Switch,
   Textarea,
   DatePicker,
-  Button,
   FileInput,
-} from "@trycreo/ui/components";
+} from "@trycreo/ui/dist/components/ui/form/index";
 
 async function MyForm() {
   return (
-    <div className="grid place-items-center">
+    <div className="p-4 w-1/2 mx-auto place-items-center bg-background mt-8">
       <Form action={dummyAction}>
         <Input
           name="fullName"

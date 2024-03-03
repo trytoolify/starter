@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import ToolsList from "@trycreo/ui/dist/components/ui/core/tools-list";
+import ToolsList from "@trycreo/ui/dist/src/components/ui/core/tools-list";
 
 import Link from "next/link";
 

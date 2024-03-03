@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import ErrorBoundary from "@trycreo/ui/dist/components/ui/core/error-boundary";
+import ErrorBoundary from "@trycreo/ui/dist/src/components/ui/core/error-boundary";
 
 export default function Error({
   error,

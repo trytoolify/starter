@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import Tool from "@trycreo/ui/dist/components/ui/core/tool";
+import Tool from "@trycreo/ui/dist/src/components/ui/core/tool";
 
 export default async function ToolPage({
   params,

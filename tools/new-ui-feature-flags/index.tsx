@@ -1,4 +1,4 @@
-import DataTable from "@trycreo/ui/dist/components/ui/data-table";
+import DataTable from "@trycreo/ui/dist/src/components/ui/data-table";
 import { promises as fs } from "fs";
 import { deleteAction, toggleNewUI } from "./actions";
 import { columns } from "./client";

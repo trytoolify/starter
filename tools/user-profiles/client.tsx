@@ -1,6 +1,6 @@
 "use client";
 
-import DataTable from "@trycreo/ui/dist/components/ui/data-table";
+import DataTable from "@trycreo/ui/dist/src/components/ui/data-table";
 import { useState } from "react";
 
 export const columns = [

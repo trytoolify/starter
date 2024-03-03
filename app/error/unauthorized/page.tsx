@@ -1,8 +1,8 @@
 export default function AccessDenied() {
     return (
-        <div>error</div>
-        // <div className="flex items-center justify-center h-[calc(100vh-108px)]">
-        //     <p>Access Denied.</p>
-        // </div>
+        <div className="flex items-center justify-center h-[calc(100vh-108px)]">
+            <p>Sorry, your access token has expired or you don't have the necessary permissions to access this
+                content.</p>
+        </div>
     );
 }

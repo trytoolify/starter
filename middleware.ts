@@ -55,7 +55,7 @@ export async function AppMiddleware(request: NextRequest) {
 
 function isTool(request: NextRequest) {
     const {key} = parse(request);
-    return key === "tools";
+    return process.env.NODE_ENV === "production" && key === "tools";
 }
 
 async function verify(token: string, secret: string) {

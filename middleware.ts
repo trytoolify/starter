@@ -38,12 +38,17 @@ export async function AppMiddleware(request: NextRequest) {
     try {
         const decodedToken = await verify(token, secretKey);
         const {toolName} = decodedToken;
-        if (slug !== toolName)
+        if (slug !== toolName) {
+            console.log("Invalid toolname");
             return authenticationFailedResponse(request);
-        if (!decodedToken)
+        }
+        if (!decodedToken) {
+            console.log("Invalid token")
             return authenticationFailedResponse(request);
+        }
         return NextResponse.next();
     } catch (err) {
+        console.log("Error decoding token")
         return authenticationFailedResponse(request);
     }
 }

@@ -31,7 +31,10 @@ export async function AppMiddleware(request: NextRequest) {
     const token = request.nextUrl.searchParams.get("token");
     if (!token) return authenticationFailedResponse(request);
     const secretKey = process.env.CREO_SHARED_SECRET_KEY;
-    if (!secretKey) return authenticationFailedResponse(request);
+    if (!secretKey) {
+        console.log("CREO_SHARED_SECRET_KEY not set")
+        return authenticationFailedResponse(request);
+    }
     try {
         const decodedToken = await verify(token, secretKey);
         const {toolName} = decodedToken;
@@ -47,7 +50,7 @@ export async function AppMiddleware(request: NextRequest) {
 
 function isTool(request: NextRequest) {
     const {key} = parse(request);
-    return process.env.NODE_ENV === "production" && key === "tools";
+    return key === "tools";
 }
 
 async function verify(token: string, secret: string) {

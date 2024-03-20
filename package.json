@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev -p 3005\" \"npx creoctl@latest dev\"",
+    "dev": "concurrently \"next dev -p 8892\" \"npx creoctl@latest dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

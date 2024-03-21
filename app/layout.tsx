@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import { cn } from "@trycreo/ui/dist/src/lib/utils";
+import { Toaster } from "./components/toaster";
+
 import "@trycreo/ui/dist/index.css";
 import "./globals.css";
 
@@ -15,8 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
-        <div className="bg-secondary min-h-screen">{children}</div>
+      <body className={cn("bg-secondary min-h-screen", GeistSans.className)}>
+        <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

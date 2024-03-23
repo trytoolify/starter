@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@trycreo/ui/dist/src/lib/utils";
-import { Toaster } from "./components/toaster";
+import { Toaster } from "@trycreo/ui/dist/src/components/ui/sonner";
 
 import "@trycreo/ui/dist/index.css";
 import "./globals.css";

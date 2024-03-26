@@ -30,7 +30,7 @@ export const Tickets = (props: { data: Ticket[]; }): React.ReactNode => {
                 ))}
             </div>
             <h1 className="mb-5 scroll-m-20 text-2xl font-semibold tracking-tight">Tickets</h1>
-            <div className="grid grid-cols-3 gap-4 flex flex-col md:flex-row">
+            <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-2 flex flex-col">
                     <Card className="flex-grow">
                         <CardContent>

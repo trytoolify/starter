@@ -39,7 +39,7 @@ function TicketDetails({ticketId}: { ticketId: number }) {
     if (error) return <div>failed to load.</div>
     if (isLoading) return <div>loading...</div>
     return (
-        <div className="p-6">
+        <div className="py-6">
             <div className="text-xl font-medium text-black">#{data?.ticketId} <strong>{data?.subject}</strong></div>
             <p className="text-gray-500">{data?.dateOpened}</p>
             <hr className="my-2"/>

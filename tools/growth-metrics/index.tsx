@@ -1,45 +1,9 @@
-"use client";
-
 import { Badge } from "@trycreo/ui/dist/src/components/ui/badge";
 import { BarChart } from "@trycreo/ui/dist/src/components/ui/bar-chart";
 import { LineChart } from "@trycreo/ui/dist/src/components/ui/line-chart";
-import {
-  dau,
-  funnel,
-  usersByCountry,
-  usersLast30Min,
-  usersVisited,
-} from "./data";
+import { dau, funnel, usersLast30Min, usersVisited } from "./data";
 
 export default function Charts() {
-  let filteredUsersByCountry = usersByCountry.map((u) => ({
-    name: u.Country,
-    value: u.Users,
-  }));
-  let filteredUsersVisited = usersVisited.map((u) => ({
-    users: u.y,
-    x: new Date(u.x).toLocaleDateString([], {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }),
-  }));
-  let filteredUsersLast30Min = usersLast30Min.map((u) => ({
-    users: u.Users,
-    Time: new Date(u.Time).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    }),
-  }));
-  let filteredDau = dau.map((u) => ({
-    DAU: u.DAU,
-    Date: new Date(u.Date).toLocaleDateString([], {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }),
-  }));
-
   return (
     <>
       <div className="grid md:grid-cols-3 gap-2 md:gap-4 p-4 w-full md:w-3/4 mx-auto">
@@ -68,8 +32,8 @@ export default function Charts() {
 
           <div className="h-full">
             <LineChart
-              data={filteredUsersVisited}
-              index="x"
+              data={usersVisited}
+              index="date"
               categories={["users"]}
               colors={["#374151"]}
             />
@@ -88,13 +52,10 @@ export default function Charts() {
           </div>
           <div className="h-full">
             <BarChart
-              data={funnel.map((u) => ({
-                name: u.Stage,
-                value: u.Users,
-              }))}
-              index="name"
+              data={funnel}
+              index="stage"
               colors={["#374151"]}
-              categories={["value"]}
+              categories={["users"]}
             />
           </div>
         </div>
@@ -111,8 +72,8 @@ export default function Charts() {
           </div>
           <div className="h-full">
             <BarChart
-              data={filteredUsersLast30Min}
-              index="Time"
+              data={usersLast30Min}
+              index="time"
               colors={["#374151"]}
               categories={["users"]}
             />
@@ -138,9 +99,9 @@ export default function Charts() {
 
           <div className="h-full">
             <LineChart
-              data={filteredDau}
-              index="Date"
-              categories={["DAU"]}
+              data={dau}
+              index="date"
+              categories={["dau"]}
               colors={["#374151"]}
             />
           </div>

@@ -1,10 +1,8 @@
 "use client";
 import DataTable from "@trycreo/ui/dist/src/components/ui/data-table";
-import { columns } from "@/tools/customer-support-tickets/client";
+import { columns } from "./client";
 import { useState } from "react";
-import TicketDetails, {
-  Ticket,
-} from "@/tools/customer-support-tickets/ticket-details";
+import TicketDetails, { Ticket } from "./ticket-details";
 import { Card, CardContent } from "@trycreo/ui/dist/src/components/ui/card";
 
 export const Tickets = (props: { data: Ticket[] }): React.ReactNode => {

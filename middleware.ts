@@ -1,10 +1,18 @@
 import {type NextRequest, NextResponse} from "next/server";
 import {jwtVerify} from "jose";
 
+
 export async function middleware(request: NextRequest) {
 
-    if (isTool(request)) {
-        return AppMiddleware(request);
+    if (isProduction()) {
+        if (isTool(request)) {
+            return AppMiddleware(request);
+        }
+        if (isErrorPage(request)) {
+            return NextResponse.next();
+        } else {
+            return authenticationFailedResponse(request);
+        }
     }
     return NextResponse.next();
 }
@@ -55,7 +63,16 @@ export async function AppMiddleware(request: NextRequest) {
 
 function isTool(request: NextRequest) {
     const {key} = parse(request);
-    return process.env.NODE_ENV === "production" && key === "tools";
+    return key === "tools";
+}
+
+function isErrorPage(request: NextRequest) {
+    const {key} = parse(request);
+    return key === "error";
+}
+
+function isProduction() {
+    return process.env.NODE_ENV === "production";
 }
 
 async function verify(token: string, secret: string) {

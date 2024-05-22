@@ -1,9 +1,9 @@
 "use client";
-import DataTable from "@trycreo/ui/dist/src/components/ui/data-table";
+import DataTable from "@trycreo/ui/data-table";
 import { columns } from "./client";
 import { useState } from "react";
 import TicketDetails, { Ticket } from "./ticket-details";
-import { Card, CardContent } from "@trycreo/ui/dist/src/components/ui/card";
+import { Card, CardContent } from "@trycreo/ui/card";
 
 export const Tickets = (props: { data: Ticket[] }): React.ReactNode => {
   const [selectedTicketId, setSelectedTicketId] = useState<number | null>(null);
@@ -43,8 +43,8 @@ export const Tickets = (props: { data: Ticket[] }): React.ReactNode => {
                 data={props.data}
                 pageSize={5}
                 isSearchable={true}
-                onRowsSelected={(selectedRows: (Ticket | undefined)[]) => {
-                  const validTickets = selectedRows.filter(
+                onRowsSelected={(selectedRows: Ticket[] | undefined) => {
+                  const validTickets = selectedRows!.filter(
                     (ticket): ticket is Ticket => ticket !== undefined
                   );
                   if (

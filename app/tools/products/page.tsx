@@ -1,6 +1,6 @@
-import { Card } from "@trycreo/ui/dist/src/components/ui/card";
-import DataTable from "@trycreo/ui/dist/src/components/ui/data-table";
-import { BarChart } from "@trycreo/ui/dist/src/components/ui/bar-chart";
+import { Card } from "@trycreo/ui/card";
+import DataTable from "@trycreo/ui/data-table";
+import { BarChart } from "@trycreo/ui/bar-chart";
 
 export default async function Products() {
   const response = await fetch(

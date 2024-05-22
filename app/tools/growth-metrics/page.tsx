@@ -1,6 +1,6 @@
-import { Badge } from "@trycreo/ui/dist/src/components/ui/badge";
-import { BarChart } from "@trycreo/ui/dist/src/components/ui/bar-chart";
-import { LineChart } from "@trycreo/ui/dist/src/components/ui/line-chart";
+import { Badge } from "@trycreo/ui/badge";
+import { BarChart } from "@trycreo/ui/bar-chart";
+import { LineChart } from "@trycreo/ui/line-chart";
 import { dau, funnel, usersLast30Min, usersVisited } from "./data";
 
 export default function Charts() {

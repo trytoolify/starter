@@ -1,7 +1,6 @@
 import {type NextRequest, NextResponse} from "next/server";
 import {jwtVerify} from "jose";
 
-
 export async function middleware(request: NextRequest) {
 
     if (isProduction()) {
@@ -19,47 +18,42 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         * Feel free to modify this pattern to include more paths.
-         */
-        // "/((?!_next/static|_next/image|favicon.ico).*)",
-        "/((?!api/|_next/|_static/|_vercel|login|[\\w-]+\\.\\w+).*)",
+        "/((?!_next/static|_next/image|favicon.ico).*)",
     ],
 };
 
 
 export async function AppMiddleware(request: NextRequest) {
+
+    let cookie = request.cookies.get('creo');
+    if (!cookie) return authenticationFailedResponse(request);
     const {fullKey} = parse(request);
     const match = fullKey.match(/tools\/(.*)/);
     const slug = match ? match[1] : "";
-    const token = request.nextUrl.searchParams.get("token");
-    if (!token) return authenticationFailedResponse(request);
     const secretKey = process.env.CREO_SHARED_SECRET_KEY;
     if (!secretKey) {
         console.log("CREO_SHARED_SECRET_KEY not set")
         return authenticationFailedResponse(request);
     }
     try {
-        const decodedToken = await verify(token, secretKey);
-        const {toolName} = decodedToken;
-        if (slug !== toolName) {
-            console.log("Invalid toolname");
-            return authenticationFailedResponse(request);
-        }
+        const decodedToken = await verify(cookie.value, secretKey);
         if (!decodedToken) {
             console.log("Invalid token")
             return authenticationFailedResponse(request);
         }
+        const tools: unknown = decodedToken.tools;
+        const toolsArray = tools as string[];
+        if (!toolsArray.includes(slug)) {
+            console.log("Invalid toolname");
+            return authenticationFailedResponse(request);
+        }
         return NextResponse.next();
     } catch (err) {
-        console.log("Error decoding token")
+        console.log("Error decoding token", err);
         return authenticationFailedResponse(request);
     }
 }
+
 
 function isTool(request: NextRequest) {
     const {key} = parse(request);
@@ -74,6 +68,7 @@ function isErrorPage(request: NextRequest) {
 function isProduction() {
     return process.env.NODE_ENV === "production";
 }
+
 
 async function verify(token: string, secret: string) {
     const {payload} = await jwtVerify(

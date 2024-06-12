@@ -54,7 +54,6 @@ export async function AppMiddleware(request: NextRequest) {
     }
 }
 
-
 function isTool(request: NextRequest) {
     const {key} = parse(request);
     return key === "tools";

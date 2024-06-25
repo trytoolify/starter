@@ -8,7 +8,7 @@ Website: [trycreo.com](https://trycreo.com)
 2. Run `npm run dev` to start the local development server, and test on localhost:3000.
 3. Run `npm run build` once you're done making your tools to verify there are no issues with the build process.
 
-## Use our AI
+## Use our extension
 
 Download our [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Creo.creo-copilot) to speed up your experience using Creo. It allows you to:
 

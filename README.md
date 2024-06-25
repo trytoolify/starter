@@ -10,7 +10,7 @@ Website: [trycreo.com](https://trycreo.com)
 
 ## Use our AI
 
-Download our VSCode extension to speed up your experience using Creo. It allows you to:
+Download our [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Creo.creo-copilot) to speed up your experience using Creo. It allows you to:
 
 1. Setup and test integrations (like Postgres) with ease,
 2. Prompt AI to rapidly create or edit your existing tools.

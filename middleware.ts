@@ -28,8 +28,11 @@ export async function AppMiddleware(request: NextRequest) {
     let cookie = request.cookies.get('creo');
     if (!cookie) return authenticationFailedResponse(request);
     const {fullKey} = parse(request);
-    const match = fullKey.match(/tools\/(.*)/);
-    const slug = match ? match[1] : "";
+    const pathList = fullKey.split("/");
+    if (pathList.length < 2 || pathList[0] !== "tools") {
+        return authenticationFailedResponse(request);
+    }
+    const toolName = pathList[1];
     const secretKey = process.env.CREO_SHARED_SECRET_KEY;
     if (!secretKey) {
         console.log("CREO_SHARED_SECRET_KEY not set")
@@ -43,7 +46,7 @@ export async function AppMiddleware(request: NextRequest) {
         }
         const tools: unknown = decodedToken.tools;
         const toolsArray = tools as string[];
-        if (!toolsArray.includes(slug)) {
+        if (!toolsArray.includes(toolName)) {
             console.log("Invalid toolname");
             return authenticationFailedResponse(request);
         }

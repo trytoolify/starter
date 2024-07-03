@@ -1,13 +1,13 @@
 {
   "name": "starter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint",
-    "creo:debug": "tsc --noEmit --pretty && npm run lint"
+    "creo:debug": "tsc --noEmit --pretty -p tsconfig.debug.json && npm run lint"
   },
   "dependencies": {
     "@trycreo/ui": "6.0.74",

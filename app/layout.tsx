@@ -5,6 +5,7 @@ import { Toaster } from "@trycreo/ui/sonner";
 
 import "@trycreo/ui/index.css";
 import "./globals.css";
+import NavBar from "./nav-bar";
 
 export const metadata: Metadata = {
   title: "Creo | Local Starter",
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("bg-secondary min-h-screen", GeistSans.className)}>
+        {!(process.env.NODE_ENV === "production") && <NavBar />}
         <main>{children}</main>
         <Toaster />
       </body>

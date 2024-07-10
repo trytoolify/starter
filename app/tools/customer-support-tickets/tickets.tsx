@@ -17,21 +17,18 @@ export const Tickets = (props: { data: Ticket[] }): React.ReactNode => {
 
   return (
     <div className="">
-      <h2 className="text-2xl font-semibold mb-4">📅 Today</h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <h2 className="text-2xl font-semibold mb-4 tracking-tight">📅 Today</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {metrics.map((metric) => (
-          <Card key={metric.title} className="flex-grow p-4">
-            <CardContent>
-              <div className="text-xl">{metric.title}</div>
-              <div className="text-3xl font-bold">{metric.value}</div>
-            </CardContent>
+          <Card key={metric.title} className="p-4">
+            <div className="text text-muted-foreground">{metric.title}</div>
+            <div className="text-6xl font-bold">{metric.value}</div>
           </Card>
         ))}
       </div>
 
-      <h1 className="mb-5 scroll-m-20 text-2xl font-semibold tracking-tight">
-        Tickets
-      </h1>
+      <h1 className="mb-4 text-2xl font-semibold tracking-tight">Tickets</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="col-span-2 flex flex-col">

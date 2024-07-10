@@ -2,6 +2,7 @@ import DataTable from "@trycreo/ui/data-table";
 import { promises as fs } from "fs";
 import { deleteAction, toggleNewUI } from "./actions";
 import { columns } from "./client";
+import { Card } from "@trycreo/ui/card";
 
 async function FeatureFlags() {
   const file = await fs.readFile(
@@ -11,20 +12,27 @@ async function FeatureFlags() {
   const data = JSON.parse(file);
 
   return (
-    <div className="p-8 m-8 bg-white">
-      <h1>Users Table</h1>
+    <div className="p-4 m-8 max-w-6xl mx-auto">
+      <div className="mb-4">
+        <h1 className="font-semibold tracking-tight">Users Table</h1>
+        <p className="text-sm text-muted-foreground">
+          Run actions on one or multiple users in this table
+        </p>
+      </div>
 
-      <DataTable
-        selectionMode="multiple"
-        columns={columns}
-        data={data}
-        pageSize={10}
-        actions={[
-          { name: "Delete", action: deleteAction },
-          { name: "Toggle new UI", action: toggleNewUI },
-        ]}
-        isSearchable={true}
-      />
+      <Card className="p-8">
+        <DataTable
+          selectionMode="multiple"
+          columns={columns}
+          data={data}
+          pageSize={10}
+          actions={[
+            { name: "Delete", action: deleteAction },
+            { name: "Toggle new UI", action: toggleNewUI },
+          ]}
+          isSearchable={true}
+        />
+      </Card>
     </div>
   );
 }

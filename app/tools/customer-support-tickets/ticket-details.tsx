@@ -41,7 +41,7 @@ function TicketDetails({ ticketId }: { ticketId: number }) {
   if (error) return <div>failed to load.</div>;
   if (isLoading) return <div>loading...</div>;
   return (
-    <div className="py-6">
+    <div className="py-6 flex flex-col space-y-4">
       <div className="text-xl font-medium text-black">
         #{data?.ticketId} <strong>{data?.subject}</strong>
       </div>
@@ -50,16 +50,21 @@ function TicketDetails({ ticketId }: { ticketId: number }) {
       <p className="text-gray-500">{data?.description}</p>
       <hr className="my-2" />
       <p className="text-gray-500">
-        Created By: {data?.customerName} ({data?.email})
+        Created By:{" "}
+        <strong>
+          {data?.customerName} ({data?.email})
+        </strong>
       </p>
-      <p className="text-gray-500">Priority: {data?.priority}</p>
-      <p className="text-gray-500">
-        Status:{" "}
-        <Badge className={getStatusClassName(data?.status!)}>
-          {data?.status}
-        </Badge>
-      </p>
-      <p className="text-gray-500">Assigned To: {data?.assignedTo}</p>
+      <div>
+        <p className="text-gray-500">Priority: {data?.priority}</p>
+        <p className="text-gray-500">
+          <span>Status: </span>
+          <Badge className={getStatusClassName(data?.status!)}>
+            {data?.status}
+          </Badge>
+        </p>
+        <p className="text-gray-500">Assigned To: {data?.assignedTo}</p>
+      </div>
     </div>
   );
 }

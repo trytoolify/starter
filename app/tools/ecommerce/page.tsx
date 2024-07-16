@@ -10,7 +10,7 @@ export default function Page() {
       <div>
         <h1 className="text-xl font-semibold tracking-tight">Dashboard</h1>
         <p className="text-muted-foreground">
-          List of all orders in Acme store, and channel based traffic.
+          List of all orders in our store, and channel based traffic.
         </p>
       </div>
 

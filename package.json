@@ -10,7 +10,7 @@
     "creo:debug": "tsc --noEmit --pretty -p tsconfig.debug.json && npm run lint"
   },
   "dependencies": {
-    "@trycreo/ui": "6.0.75",
+    "@trycreo/ui": "6.0.77",
     "geist": "^1.2.2",
     "jose": "^5.2.2",
     "lucide-react": "^0.335.0",

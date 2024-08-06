@@ -9,7 +9,7 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "Creo.creo-copilot"
+          "creo.creo-copilot"
         ],
         "settings": {
           "terminal.integrated.defaultProfile.linux": "bash"

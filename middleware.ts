@@ -25,7 +25,7 @@ export const config = {
 
 export async function AppMiddleware(request: NextRequest) {
 
-    let cookie = request.cookies.get('creo');
+    let cookie = request.cookies.get('toolify');
     if (!cookie) return authenticationFailedResponse(request);
     const {fullKey} = parse(request);
     const pathList = fullKey.split("/");
@@ -33,9 +33,9 @@ export async function AppMiddleware(request: NextRequest) {
         return authenticationFailedResponse(request);
     }
     const toolName = pathList[1];
-    const secretKey = process.env.CREO_SHARED_SECRET_KEY;
+    const secretKey = process.env.TOOLIFY_SHARED_SECRET_KEY;
     if (!secretKey) {
-        console.log("CREO_SHARED_SECRET_KEY not set")
+        console.log("TOOLIFY_SHARED_SECRET_KEY not set")
         return authenticationFailedResponse(request);
     }
     try {

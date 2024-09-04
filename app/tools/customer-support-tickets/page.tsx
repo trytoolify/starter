@@ -2,7 +2,7 @@ import { Tickets } from "./tickets";
 
 export default async function CustomerSupportTickets() {
   const response = await fetch(
-    "https://app.trycreo.com/mock-api/support-tickets",
+    "https://app.toolify.sh/mock-api/support-tickets",
     {
       method: "GET",
       headers: {

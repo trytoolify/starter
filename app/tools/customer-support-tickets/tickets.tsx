@@ -1,9 +1,9 @@
 "use client";
-import DataTable from "@trycreo/ui/data-table";
+import DataTable from "@trytoolify/ui/data-table";
 import { columns } from "./client";
 import { useState } from "react";
 import TicketDetails, { Ticket } from "./ticket-details";
-import { Card, CardContent } from "@trycreo/ui/card";
+import { Card, CardContent } from "@trytoolify/ui/card";
 
 export const Tickets = (props: { data: Ticket[] }): React.ReactNode => {
   const [selectedTicketId, setSelectedTicketId] = useState<number | null>(null);

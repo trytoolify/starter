@@ -11,13 +11,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@trycreo/ui/card";
+} from "@trytoolify/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@trycreo/ui/chart";
+} from "@trytoolify/ui/chart";
 
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },

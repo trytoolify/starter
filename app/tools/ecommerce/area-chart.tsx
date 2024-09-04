@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@trycreo/ui/card";
+} from "@trytoolify/ui/card";
 import {
   ChartConfig,
   ChartContainer,
@@ -17,14 +17,14 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@trycreo/ui/chart";
+} from "@trytoolify/ui/chart";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@trycreo/ui/select";
+} from "@trytoolify/ui/select";
 import { visitorsData } from "./data";
 
 const chartConfig = {

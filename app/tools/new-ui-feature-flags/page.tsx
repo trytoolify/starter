@@ -1,8 +1,8 @@
-import DataTable from "@trycreo/ui/data-table";
+import DataTable from "@trytoolify/ui/data-table";
 import { promises as fs } from "fs";
 import { deleteAction, toggleNewUI } from "./actions";
 import { columns } from "./client";
-import { Card } from "@trycreo/ui/card";
+import { Card } from "@trytoolify/ui/card";
 
 async function FeatureFlags() {
   const file = await fs.readFile(

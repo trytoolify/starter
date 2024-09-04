@@ -4,8 +4,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@trycreo/ui/card";
-import DataTable from "@trycreo/ui/data-table";
+} from "@trytoolify/ui/card";
+import DataTable from "@trytoolify/ui/data-table";
 import { ordersData } from "./data";
 
 export default function Table() {

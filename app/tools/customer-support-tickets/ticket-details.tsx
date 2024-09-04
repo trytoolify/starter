@@ -1,6 +1,6 @@
 "use client";
 import useSWR, { Fetcher, Key } from "swr";
-import { Badge } from "@trycreo/ui/badge";
+import { Badge } from "@trytoolify/ui/badge";
 
 function getStatusClassName(status: string) {
   switch (status) {
@@ -32,7 +32,7 @@ export interface Ticket {
 function TicketDetails({ ticketId }: { ticketId: number }) {
   const uid: Key = ticketId.toString();
   const fetcher: Fetcher<Ticket, string> = (id) =>
-    fetch(`https://app.trycreo.com/mock-api/support-tickets/${id}`).then(
+    fetch(`https://app.toolify.sh/mock-api/support-tickets/${id}`).then(
       (res) => res.json()
     );
 

@@ -2,9 +2,8 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "creo.creo-copilot"
+          "toolify.toolify-copilot"
         ]
-       
       }
     }
   }

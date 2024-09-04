@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { cn } from "@trycreo/ui/lib/utils";
-import { Toaster } from "@trycreo/ui/sonner";
+import { cn } from "@trytoolify/ui/lib/utils";
+import { Toaster } from "@trytoolify/ui/sonner";
 
-import "@trycreo/ui/index.css";
+import "@trytoolify/ui/index.css";
 import "./globals.css";
 import NavBar from "./nav-bar";
 
 export const metadata: Metadata = {
-  title: "Creo | Local Starter",
+  title: "Toolify | Local Starter",
   description: "Generate your tools quickly",
 };
 

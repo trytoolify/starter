@@ -1,5 +1,5 @@
 const nextConfig = {
-    transpilePackages: ["@trycreo/ui"]
+    transpilePackages: ["@trytoolify/ui"]
 };
 
 export default nextConfig;

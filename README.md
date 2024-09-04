@@ -1,6 +1,6 @@
-# Starter project for Creo
+# Starter project for Toolify
 
-Website: [trycreo.com](https://trycreo.com)
+Website: [toolify.sh](https://toolify.sh)
 
 ## Developing locally
 
@@ -10,7 +10,7 @@ Website: [trycreo.com](https://trycreo.com)
 
 ## Use our extension
 
-Download our [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Creo.creo-copilot) to speed up your experience using Creo. It allows you to:
+Download our [VSCode extension](https://marketplace.visualstudio.com/items?itemName=toolify.toolify-copilot) to speed up your experience using Toolify. It allows you to:
 
 1. Setup and test integrations (like Postgres) with ease,
 2. Prompt AI to rapidly create or edit your existing tools.

@@ -10,7 +10,7 @@
     "toolify:debug": "tsc --noEmit --pretty -p tsconfig.debug.json && npm run lint"
   },
   "dependencies": {
-    "@trytoolify/ui": "6.0.77",
+    "@trytoolify/ui": "6.0.78",
     "geist": "^1.2.2",
     "jose": "^5.2.2",
     "lucide-react": "^0.335.0",
